@@ -1,4 +1,5 @@
 # MK School Management Dashboard
+CLick here to live view: https://school-management-iota-mocha.vercel.app/admin
 
 ## Getting Started
 

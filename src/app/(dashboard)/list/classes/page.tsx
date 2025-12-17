@@ -89,7 +89,7 @@ const ClassListPage = () => {
             
             {role === "admin" && (
               
-              <FormModal table="class" type="update"  /> 
+              <FormModal table="class" type="create"  /> 
           
           )}
           </div>

@@ -27,7 +27,7 @@ const schema = z.object({
 type inputs = z.infer<typeof schema>;
 
 
-const TeacherForm = ({
+const SubjectForm = ({
   type,data}:{type:"create" | "update"; 
   data?:any;
 
@@ -46,7 +46,7 @@ const TeacherForm = ({
   })
 
   return <form className='flex flex-col gap-8' onSubmit={onSubmit}>
-    <h1 className="text-xl font-semibold">Create a new teacher</h1>
+    <h1 className="text-xl font-semibold">Create a new Subject</h1>
     <span className="text-xs text-gray-600 font-medium">
       Authentication Information
     </span>
@@ -157,4 +157,4 @@ const TeacherForm = ({
   
 }
 
-export default TeacherForm
+export default SubjectForm;

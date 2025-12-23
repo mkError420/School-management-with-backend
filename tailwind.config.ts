@@ -6,6 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -13,14 +14,15 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors:{
-        lamaSky:"#C3EBFA",
-        lamaSkyLight:"#EDF9FD",
-        lamaPurple:"#CFCEFF",
-        lamaPurpleLight:"#F1F0FF",
-        lamaYellow:"#FAE27C",
-        lamaYellowLight:"#FEFCE8",
-      }
+      colors: {
+        lamaSky: "#C3EBFA",
+        lamaSkyLight: "#EDF9FD",
+        lamaPurple: "#CFCEFF",
+        lamaPurpleLight: "#F1F0FF",
+        lamaYellow: "#FAE27C",
+        lamaYellowLight: "#FEFCE8",
+        dark: "#1E1E1E",
+      },
     },
   },
   plugins: [],

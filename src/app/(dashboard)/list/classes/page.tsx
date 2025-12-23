@@ -45,7 +45,7 @@ const ClassListPage = () => {
 
 
   const renderRow=(item:Class)=>(
-    <tr key={item.id} className="border-b border-gray-300 even:bg-slate-100 text-xs hover:bg-purple-100">
+    <tr key={item.id} className="border-b border-gray-300 even:bg-slate-100 text-xs hover:bg-purple-100 dark:even:bg-gray-800 dark:hover:bg-gray-700">
       <td className="flex items-center gap-4 py-4 font-semibold">
         {item.name}
         
@@ -73,7 +73,7 @@ const ClassListPage = () => {
   )
   
   return (
-    <div className=' bg-white p-4 rounded-md flex-1 m-4 mt-0'>
+    <div className=' bg-white p-4 rounded-md flex-1 m-4 mt-0 dark:bg-gray-700'>
       {/* TOP */}
       <div className=" flex items-center justify-between">
         <h1 className="hidden md:block text-lg font-semibold">All Classes</h1>

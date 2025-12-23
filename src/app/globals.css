@@ -10,6 +10,75 @@ body, html {
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  .dark .rbc-toolbar button {
+    background-color: #333 !important;
+    color: #fff !important;
+  }
+  .dark .rbc-toolbar button.rbc-active {
+    background-color: #555 !important;
+  }
+  .dark .rbc-time-view {
+    border-color: #555 !important;
+  }
+  .dark .rbc-time-header {
+    border-color: #555 !important;
+  }
+  .dark .rbc-time-content {
+    border-color: #555 !important;
+  }
+  .dark .rbc-time-gutter.rbc-time-column {
+    background-color: #333 !important;
+    border-color: #555 !important;
+  }
+  .dark .rbc-timeslot-group {
+    background-color: #2a2a2a !important;
+    border-color: #555 !important;
+  }
+  .dark .rbc-day-slot {
+    background-color: #2a2a2a !important;
+  }
+  .dark .rbc-event {
+    background-color: #444 !important;
+    color: #fff !important;
+  }
+  .dark .rbc-event-label {
+    color: #fff !important;
+  }
+  .dark .rbc-off-range-bg {
+    background: #333 !important;
+  }
+  .dark .rbc-today {
+    background-color: #333 !important;
+  }
+  .dark .react-calendar {
+    background-color: #333 !important;
+    color: #fff !important;
+  }
+  .dark .react-calendar__navigation button {
+    color: #fff !important;
+    background-color: #333 !important;
+  }
+  .dark .react-calendar__tile {
+    color: #fff !important;
+  }
+  .dark .react-calendar__tile:enabled:hover,
+  .dark .react-calendar__tile:enabled:focus {
+    background-color: #555 !important;
+  }
+  .dark .react-calendar__tile--active {
+    background-color: #555 !important;
+    color: white !important;
+  }
+  .dark .react-calendar__tile--now {
+    background: #444 !important;
+  }
+  .dark .react-calendar__month-view__weekdays__weekday {
+    color: #fff !important;
+  }
+}
+
 .react-calendar{ width: 100% !important; border: none !important; font-family: "Inter", !important; text-decoration: none !important; } 
 
 .react-calendar__navigation__label__labelText{ font-size: 600; }

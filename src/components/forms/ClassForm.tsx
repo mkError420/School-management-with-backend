@@ -46,8 +46,8 @@ const ClassForm = ({
   })
 
   return <form className='flex flex-col gap-8' onSubmit={onSubmit}>
-    <h1 className="text-xl font-semibold">Create a new Class</h1>
-    <span className="text-xs text-gray-600 font-medium">
+    <h1 className="text-xl font-semibold dark:text-white">Create a new Class</h1>
+    <span className="text-xs text-gray-600 font-medium dark:text-gray-300">
       Authentication Information
     </span>
     
@@ -77,7 +77,7 @@ const ClassForm = ({
   error={errors?.password}
   />
  </div>
-    <span className="text-xs text-gray-600 font-medium">
+    <span className="text-xs text-gray-600 font-medium dark:text-gray-300">
       Personal Information
       </span>
       <div className="flex justify-between flex-wrap gap-4">
@@ -129,8 +129,8 @@ const ClassForm = ({
   />
  
      <div className="flex flex-col gap-2 w-full md:w-1/4 ">
-    <label className="text-xs text-gray-700">Sex</label>
-    <select className="ring-[1.5px] ring-gray-600 p-2 rounded-md text-sm w-full"{...register("sex")} defaultValue={data?.sex} >
+    <label className="text-xs text-gray-700 dark:text-white">Sex</label>
+    <select className="ring-[1.5px] ring-gray-600 p-2 rounded-md text-sm w-full dark:ring-gray-300 dark:bg-gray-700 dark:text-white"{...register("sex")} defaultValue={data?.sex} >
       <option value="male">Male</option>
       <option value="female">Female</option>
     </select>
@@ -139,12 +139,12 @@ const ClassForm = ({
   </div>
 
   <div className="flex flex-col gap-2 w-full md:w-1/4 justify-center ">
-    <label className="text-xs text-gray-700 flex items-center gap-2 cursor-pointer" htmlFor="img">
+    <label className="text-xs text-gray-700 dark:text-white flex items-center gap-2 cursor-pointer" htmlFor="img">
       <Image src="/upload.png" alt="" width={28} height={28}/>
       <span>Upload Image</span>
     </label>
    <input type="file" id="img" {...register("img")} className="hidden" />
-    {errors?.img?.message && (<p className="text-xs text-red-700">{errors.img?.message.toString()}</p>
+    {errors?.img?.message && (<p className="text-xs text-red-700 dark:text-red-400">{errors.img?.message.toString()}</p>
   )}
   </div>
 

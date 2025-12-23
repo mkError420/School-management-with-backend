@@ -77,7 +77,7 @@ const data = [
 
 const FinanceChart = () => {
   return (
-    <div className='bg-white roundedxl w-full h-full p-4 rounded-md'>
+    <div className='bg-white roundedxl w-full h-full p-4 rounded-md dark:bg-gray-700'>
           {/* TITLE */}
           <div className='flex justify-between items-center'>
             <h1 className='text-lg font-semibold'>Finance</h1>

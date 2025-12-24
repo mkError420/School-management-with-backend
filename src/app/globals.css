@@ -3,6 +3,15 @@
 	--app-height: 100dvh;
 }
 
+.dark {
+  --dark-bg-color: #1E1E1E; /* From tailwind.config.ts custom 'dark' color */
+  --dark-surface-color: #2a2a2a; /* A slightly lighter shade for surfaces */
+  --dark-border-color: #3f3f46; /* gray-700 in Tailwind, for borders */
+  --dark-text-color: #ffffff;
+  --dark-text-secondary-color: #d1d5db; /* gray-300 in Tailwind */
+  --dark-active-surface-color: #4b5563; /* For active/hover states */
+}
+
 body, html {
 	height: 100%;
 }
@@ -13,69 +22,69 @@ body, html {
 @layer base {
 
   .dark .rbc-toolbar button {
-    background-color: #333 !important;
-    color: #fff !important;
+    background-color: var(--dark-surface-color) !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .rbc-toolbar button.rbc-active {
-    background-color: #555 !important;
+    background-color: var(--dark-active-surface-color) !important;
   }
   .dark .rbc-time-view {
-    border-color: #555 !important;
+    border-color: var(--dark-border-color) !important;
   }
   .dark .rbc-time-header {
-    border-color: #555 !important;
+    border-color: var(--dark-border-color) !important;
   }
   .dark .rbc-time-content {
-    border-color: #555 !important;
+    border-color: var(--dark-border-color) !important;
   }
   .dark .rbc-time-gutter.rbc-time-column {
-    background-color: #333 !important;
-    border-color: #555 !important;
+    background-color: var(--dark-surface-color) !important;
+    border-color: var(--dark-border-color) !important;
   }
   .dark .rbc-timeslot-group {
-    background-color: #2a2a2a !important;
-    border-color: #555 !important;
+    background-color: var(--dark-surface-color) !important;
+    border-color: var(--dark-border-color) !important;
   }
   .dark .rbc-day-slot {
-    background-color: #2a2a2a !important;
+    background-color: var(--dark-surface-color) !important;
   }
   .dark .rbc-event {
-    background-color: #444 !important;
-    color: #fff !important;
+    background-color: var(--dark-active-surface-color) !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .rbc-event-label {
-    color: #fff !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .rbc-off-range-bg {
-    background: #333 !important;
+    background: var(--dark-surface-color) !important;
   }
   .dark .rbc-today {
-    background-color: #333 !important;
+    background-color: var(--dark-surface-color) !important;
   }
   .dark .react-calendar {
-    background-color: #333 !important;
-    color: #fff !important;
+    background-color: var(--dark-bg-color) !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .react-calendar__navigation button {
-    color: #fff !important;
-    background-color: #333 !important;
+    color: var(--dark-text-color) !important;
+    background-color: var(--dark-surface-color) !important;
   }
   .dark .react-calendar__tile {
-    color: #fff !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .react-calendar__tile:enabled:hover,
   .dark .react-calendar__tile:enabled:focus {
-    background-color: #555 !important;
+    background-color: var(--dark-active-surface-color) !important;
   }
   .dark .react-calendar__tile--active {
-    background-color: #555 !important;
-    color: white !important;
+    background-color: var(--dark-active-surface-color) !important;
+    color: var(--dark-text-color) !important;
   }
   .dark .react-calendar__tile--now {
-    background: #444 !important;
+    background: var(--dark-active-surface-color) !important;
   }
   .dark .react-calendar__month-view__weekdays__weekday {
-    color: #fff !important;
+    color: var(--dark-text-color) !important;
   }
 }
 
@@ -91,6 +100,108 @@ body, html {
 .rbc-toolbar button.rbc-active{ background-color: #cacecf !important; box-shadow: none !important; } 
 .rbc-time-view{ border-color: rgb(191, 179, 194) !important; } 
 .rbc-time-header{ display: none !important; } .rbc-time-content{ border: none !important; } .rbc-time-gutter.rbc-time-column{ font-size: 14px !important; } .rbc-time-gutter.rbc-time-column .rbc-timeslot-group{ padding: 0px 20px!important; } .rbc-timeslot-group{ background-color: #f7fdff !important; } .rbc-day-slot{ font-size: 15px !important; } .rbc-event{ border: none !important; color: black !important; padding: 10px !important; margin: 10px !important; width: 99% !important; } .rbc-event:nth-child(1){ background-color: rgb(255, 222, 222) !important; } .rbc-event:nth-child(2){ background-color: rgb(255, 222, 222) !important; } .rbc-event:nth-child(3){ background-color: rgb(207, 173, 173) !important; }.rbc-event:nth-child(4){ background-color: rgb(231, 172, 172) !important; }.rbc-event:nth-child(5){ background-color: rgb(180, 223, 226) !important; }.rbc-event:nth-child(6){ background-color: rgb(241, 200, 200) !important; }.rbc-event:nth-child(7){ background-color: rgb(215, 173, 243) !important; }.rbc-event:nth-child(8){ background-color: rgb(255, 222, 222) !important; } .rbc-event-label{ color: rgb(25, 25, 26) !important; margin-bottom: 5px !important; }
+
+/* 3D Scene for Sign-in page */
+body {
+  perspective: 1000px; /* Add perspective to the body for 3D effect */
+  overflow: hidden; /* Prevent scrollbars from 3D elements */
+  position: relative; /* For z-index stacking */
+}
+
+.scene-3d {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  pointer-events: none; /* Allow interaction with elements behind it */
+  z-index: 0; /* Ensure it stays in the background */
+  overflow: hidden; /* Contains children */
+}
+
+.scene-3d-element {
+  position: absolute;
+  width: 100px; /* Example size */
+  height: 100px; /* Example size */
+  background-color: rgba(255, 255, 255, 0.05); /* Subtle color for light mode */
+  border-radius: 50%; /* Make them circles */
+  animation: floatAndRotate 15s infinite ease-in-out alternate; /* Animation */
+  opacity: 0.1; /* Very subtle */
+  will-change: transform, opacity; /* Optimize animation */
+}
+
+/* Specific positioning and transformations for multiple elements */
+.scene-3d-element:nth-child(1) {
+  top: 10%;
+  left: 15%;
+  transform: rotateX(20deg) rotateY(40deg) translateZ(-100px);
+  animation-delay: 0s;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.08); /* Slightly brighter */
+}
+.scene-3d-element:nth-child(2) {
+  top: 50%;
+  left: 80%;
+  transform: rotateX(-30deg) rotateY(10deg) translateZ(-50px);
+  animation-delay: 5s;
+  width: 80px;
+  height: 80px;
+}
+.scene-3d-element:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  transform: rotateX(10deg) rotateY(-20deg) translateZ(-200px);
+  animation-delay: 10s;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+.scene-3d-element:nth-child(4) {
+  top: 25%;
+  left: 60%;
+  transform: rotateX(50deg) rotateY(25deg) translateZ(-150px);
+  animation-delay: 2s;
+  width: 90px;
+  height: 90px;
+}
+.scene-3d-element:nth-child(5) {
+  top: 70%;
+  left: 10%;
+  transform: rotateX(-10deg) rotateY(50deg) translateZ(-75px);
+  animation-delay: 7s;
+  width: 110px;
+  height: 110px;
+}
+
+@keyframes floatAndRotate {
+  0% {
+    transform: translateZ(-100px) rotateY(0deg) rotateX(0deg) translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateZ(-120px) rotateY(90deg) rotateX(10deg) translateX(20px) translateY(-20px);
+  }
+  50% {
+    transform: translateZ(-100px) rotateY(180deg) rotateX(0deg) translateX(0) translateY(0);
+  }
+  75% {
+    transform: translateZ(-80px) rotateY(270deg) rotateX(-10deg) translateX(-20px) translateY(20px);
+  }
+  100% {
+    transform: translateZ(-100px) rotateY(360deg) rotateX(0deg) translateX(0) translateY(0);
+  }
+}
+
+/* Dark mode specific adjustments */
+.dark .scene-3d-element {
+  background-color: rgba(var(--dark-text-color-rgb), 0.05); /* Use dark mode text color */
+}
+
+.dark {
+  --dark-text-color-rgb: 255, 255, 255; /* RGB values for --dark-text-color (#ffffff) */
+}
+
 
 
 
